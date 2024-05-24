@@ -5,6 +5,14 @@ Este projeto tem como objetivo praticar testes unitários usando a linguagem de 
 Descrição do Projeto
 O projeto inclui um programa em Go que, ao receber um número inteiro como entrada, identifica se o número é primo ou não, exibindo uma mensagem no terminal com o resultado da verificação.
 
+Sumário
+Os testes são projetados para garantir que cada parte do programa funcione corretamente sob várias condições, incluindo entradas válidas, inválidas e casos especiais. Eles cobrem:
+
+Validação da funcionalidade principal (isPrime).
+Comportamento da interface do usuário (prompt e intro).
+Manipulação de entradas do usuário (checkNumbers).
+Controle de fluxo e terminação do programa (readUserInput).
+
 Exemplo de Uso
 Execução Rápida dos Testes (em cache):
 go test .
@@ -40,6 +48,14 @@ This project aims to practice unit testing using the Go programming language (Go
 
 Project Description
 The project includes a Go program that, when given an integer as input, identifies whether the number is prime or not, displaying a message in the terminal with the result of the verification.
+
+Summary
+Tests are designed to ensure that each part of the program works correctly under various conditions, including valid inputs, invalid inputs and special cases. They cover:
+
+Validation of core functionality (isPrime).
+User interface behavior (prompt and intro).
+Handling user inputs (checkNumbers).
+Program flow control and termination (readUserInput).
 
 Usage Example
 Quick Test Execution (cached):
