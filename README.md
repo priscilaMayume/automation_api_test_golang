@@ -44,3 +44,45 @@ go tool cover -html=coverage.out
 Utilize este comando para gerar um relatório visual em HTML da cobertura de código a partir do arquivo coverage.out. O relatório inclui detalhes sobre as linhas de código cobertas pelos testes, facilitando a análise e identificação de áreas que precisam de mais testes.
 
 Este projeto é uma oportunidade de aprimorar suas habilidades em testes unitários em Go e utilizar ferramentas que auxiliam na análise e melhoria da qualidade do código.
+
+-----------------------------------------------------------------------
+
+This project aims to practice unit testing using the Go programming language (Golang). It utilizes the Visual Studio Code (VSCode) development environment and Go version go1.22.3 for the Darwin/amd64 platform.
+
+Project Description
+The project includes a Go program that, when given an integer as input, identifies whether the number is prime or not, displaying a message in the terminal with the result of the verification.
+
+Usage Example
+Quick Test Execution (cached):
+bash
+Copiar código
+go test .
+This command is useful during development to quickly check the test results without needing to rerun all the tests.
+
+Complete Test Execution (without cache):
+bash
+Copiar código
+go test -count=1 .
+Use this command after making changes to the code or tests to ensure everything is being tested again, without using the cached version of the results.
+
+Code Coverage Analysis
+Useful Commands for Checking Unit Test Coverage:
+Display Coverage in the Terminal:
+bash
+Copiar código
+go test -cover
+This command displays the code coverage in the terminal after running the tests but does not store these results in an external file.
+
+Generate Coverage Profile in an External File:
+bash
+Copiar código
+go test -coverprofile=coverage.out
+In addition to running the tests and calculating code coverage, this command stores the results in a file called coverage.out. This file contains detailed information about the code coverage that can be used later for more detailed analysis.
+
+Generate HTML Report of Code Coverage:
+bash
+Copiar código
+go tool cover -html=coverage.out
+Use this command to generate a visual HTML report of the code coverage from the coverage.out file. The report includes details about the lines of code covered by the tests, making it easier to analyze and identify areas that need more tests.
+
+This project is an opportunity to enhance your skills in unit testing in Go and utilize tools that help in analyzing and improving code quality.
