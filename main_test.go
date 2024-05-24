@@ -9,7 +9,7 @@ import (
 	"testing"
 )
 
-func Test_isPrime(t *testing.T) {
+func Test_alpha_isPrime(t *testing.T) {
 	// Define os casos de teste
 	primeTest := []struct {
 		name     string
@@ -45,7 +45,7 @@ func Test_isPrime(t *testing.T) {
 	}
 }
 
-func Test_prompt(t *testing.T) {
+func Test_alpha_prompt(t *testing.T) {
 	// Salva uma cópia do os.Stdout
 	oldOut := os.Stdout
 
@@ -72,7 +72,7 @@ func Test_prompt(t *testing.T) {
 	}
 }
 
-func Test_intro(t *testing.T) {
+func Test_alpha_intro(t *testing.T) {
 	// Salva uma cópia do os.Stdout
 	oldOut := os.Stdout
 
@@ -99,7 +99,7 @@ func Test_intro(t *testing.T) {
 	}
 }
 
-func Test_checkNumbers(t *testing.T) {
+func Test_alpha_checkNumbers(t *testing.T) {
 	// Define os casos de teste
 	test := []struct {
 		name     string
@@ -130,7 +130,7 @@ func Test_checkNumbers(t *testing.T) {
 	}
 }
 
-func Test_readUserInput(t *testing.T) {
+func Test_alpha_readUserInput(t *testing.T) {
 	// Para testar esta função, precisamos de um canal e uma instância de um io.Reader
 	doneChan := make(chan bool)
 

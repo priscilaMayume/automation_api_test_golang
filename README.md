@@ -13,34 +13,37 @@ Comportamento da interface do usuário (prompt e intro).
 Manipulação de entradas do usuário (checkNumbers).
 Controle de fluxo e terminação do programa (readUserInput).
 
-Exemplo de Uso
-Execução Rápida dos Testes (em cache):
-go test .
-Este comando é útil durante o desenvolvimento para verificar rapidamente os resultados dos testes sem a necessidade de reexecutar todos os testes.
-
-Execução Completa dos Testes (sem cache):
-go test -count=1 .
-Use este comando após realizar mudanças no código ou nos testes para garantir que tudo está sendo testado novamente, sem usar a versão em cache dos resultados.
-
-Execução dos testes em um pacote Go e exibir informações detalhadas sobre o progresso e os resultados dos testes:
-go test -v
-
-Análise da Cobertura de Código
-Comandos Úteis para Checagem de Cobertura de Testes Unitários:
-Exibir Cobertura no Terminal:
-go test -cover
-Este comando exibe a cobertura de código no terminal após a execução dos testes, mas não armazena esses resultados em um arquivo externo.
-
-Gerar Perfil de Cobertura em Arquivo Externo:
+Passos para Gerar Relatório de Cobertura
+Executar os testes com cobertura e gerar um arquivo de saída:
 go test -coverprofile=coverage.out
-Além de executar os testes e calcular a cobertura de código, este comando armazena os resultados em um arquivo chamado coverage.out. Esse arquivo contém informações detalhadas sobre a cobertura de código que podem ser usadas posteriormente para análises mais detalhadas.
 
-Gerar Relatório HTML da Cobertura de Código:
-csharp
+Visualizar o relatório de cobertura no terminal:
+go tool cover -func=coverage.out
+
+Visualizar o relatório de cobertura em formato HTML:
 go tool cover -html=coverage.out
-Utilize este comando para gerar um relatório visual em HTML da cobertura de código a partir do arquivo coverage.out. O relatório inclui detalhes sobre as linhas de código cobertas pelos testes, facilitando a análise e identificação de áreas que precisam de mais testes.
 
-Este projeto é uma oportunidade de aprimorar suas habilidades em testes unitários em Go e utilizar ferramentas que auxiliam na análise e melhoria da qualidade do código.
+__________________________________
+
+Exemplo de Uso
+Executar os testes com cobertura:
+go test -coverprofile=coverage.out
+
+Isso executará os testes e criará um arquivo coverage.out contendo os dados de cobertura.
+Visualizar o relatório de cobertura no terminal:
+go tool cover -func=coverage.out
+
+Isso exibirá um resumo da cobertura de cada função no seu código.
+Visualizar o relatório de cobertura em HTML:
+go tool cover -html=coverage.out
+
+Isso abrirá um navegador da web mostrando um relatório detalhado da cobertura de código em um formato visual.
+Resumo
+go test -coverprofile=coverage.out: Gera um arquivo coverage.out com os dados de cobertura.
+go tool cover -func=coverage.out: Mostra um resumo da cobertura no terminal.
+go tool cover -html=coverage.out: Abre um relatório de cobertura em formato HTML.
+Com esses passos, você poderá calcular e visualizar a cobertura de código dos seus testes em Go.
+
 
 -----------------------------------------------------------------------
 
@@ -57,30 +60,35 @@ User interface behavior (prompt and intro).
 Handling user inputs (checkNumbers).
 Program flow control and termination (readUserInput).
 
-Usage Example
-Quick Test Execution (cached):
-go test .
-This command is useful during development to quickly check the test results without needing to rerun all the tests.
+________________________________________
 
-Complete Test Execution (without cache):
-go test -count=1 .
-Use this command after making changes to the code or tests to ensure everything is being tested again, without using the cached version of the results.
-
-Running tests on a Go package and displaying detailed information on the progress and results of the tests:
-go test -v
-
-Code Coverage Analysis
-Useful Commands for Checking Unit Test Coverage:
-Display Coverage in the Terminal:
-go test -cover
-This command displays the code coverage in the terminal after running the tests but does not store these results in an external file.
-
-Generate Coverage Profile in an External File:
+Steps to Generate Coverage Report
+Run the tests with coverage and generate an output file:
 go test -coverprofile=coverage.out
-In addition to running the tests and calculating code coverage, this command stores the results in a file called coverage.out. This file contains detailed information about the code coverage that can be used later for more detailed analysis.
 
-Generate HTML Report of Code Coverage:
+View the coverage report in the terminal:
+go tool cover -func=coverage.out
+
+View the coverage report in HTML format:
 go tool cover -html=coverage.out
-Use this command to generate a visual HTML report of the code coverage from the coverage.out file. The report includes details about the lines of code covered by the tests, making it easier to analyze and identify areas that need more tests.
 
-This project is an opportunity to enhance your skills in unit testing in Go and utilize tools that help in analyzing and improving code quality.
+__________________________________
+Example of use
+Run the tests with coverage:
+go test -coverprofile=coverage.out
+
+This will run the tests and create a coverage.out file containing the coverage data.
+View the coverage report in the terminal:
+go tool cover -func=coverage.out
+
+This will display a summary of the coverage of each function in your code.
+View the coverage report in HTML:
+go tool cover -html=coverage.out
+
+This will open a web browser showing a detailed code coverage report in a visual format.
+Summary
+go test -coverprofile=coverage.out: Generates a coverage.out file with the coverage data.
+go tool cover -func=coverage.out: Displays a coverage summary in the terminal.
+go tool cover -html=coverage.out: Opens a coverage report in HTML format.
+With these steps, you can calculate and visualize the code coverage of your Go tests.
+
