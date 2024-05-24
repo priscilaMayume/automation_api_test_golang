@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bufio"
 	"io"
 	"os"
 	"strings"
@@ -94,6 +95,37 @@ func Test_intro(t *testing.T) {
 	// Realiza nosso teste
 	if !strings.Contains(string(out), "Enter a whole number") {
 		t.Errorf("intro text not correct, got %s", string(out))
+	}
+}
+
+func Test_checkNumbers(t *testing.T) {
+	// Define os casos de teste
+	test := []struct {
+		name     string
+		input    string
+		expected string
+}{
+	{name: "empty", input: "", expected: "Please enter a whole number!"},
+	{name: "prime_number", input: "7", expected: "7 is a prime number!"},
+	{name: "zero", input: "0", expected: "0 is not prime, by definition!"},
+	{name: "negative", input: "-5", expected: "Negative numbers are not prime, by definition!"},
+	{name: "one", input: "1", expected: "1 is not prime, by definition!"},
+	{name: "not_prime", input: "4", expected: "4 is not a prime number because it is divisible by 2"},
+	{name: "type", input: "three", expected: "Please enter a whole number!"},
+	{name: "decimal", input: "1.1", expected: "Please enter a whole number!"},
+	{name: "quit", input: "q", expected: ""},
+	{name: "Special", input: "@ˆ#*", expected: "Please enter a whole number!"},
+
+}
+
+	for _, e := range test {
+		input := strings.NewReader(e.input)
+		read := bufio.NewScanner(input)
+		res, _ := checkNumbers(read)
+
+		if !strings.EqualFold(res, e.expected) {
+			t.Errorf("%s: expected, %s, but got %s", e.name, e.expected, res)
+		}
 	}
 }
 
